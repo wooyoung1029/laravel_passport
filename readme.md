@@ -148,7 +148,7 @@
 ## 遇到的坑
 
     确保table oauth_clients中的personal_access_client和password_client字段均为0 否则会报{"error":"invalid_client","error_description":"Client authentication failed","message":"Client authentication failed"}
-
+    （解决这个问题修改了vendor/laravel/passport/src/Bridge/ClientRepository.php Line73 改为return $record->firstParty()也解决了）
 ## 文档
       https://laravelacademy.org/post/9752.html
       https://laravelacademy.org/post/9748.html#toc_2
